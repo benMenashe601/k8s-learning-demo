@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09111f" />
+    <title>Kubernetes Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DOCKER · KUBERNETES · POSTGRESQL</p>
+          <h1 id="app-name">Kubernetes Lab</h1>
+          <p id="welcome-message" class="subtitle">טוען הגדרות מהסביבה…</p>
+        </div>
+        <div class="pulse-wrap"><span class="pulse"></span><span>LIVE</span></div>
+      </header>
+
+      <section class="flow" aria-label="זרימת המערכת">
+        <article><span class="icon">◫</span><b>Frontend</b><small>Nginx</small></article>
+        <i>←</i>
+        <article><span class="icon">⌘</span><b>Backend API</b><small>Node.js</small></article>
+        <i>←</i>
+        <article><span class="icon">▰</span><b>Database</b><small>PostgreSQL</small></article>
+      </section>
+
+      <section class="grid">
+        <article class="card status-card">
+          <div class="card-title"><h2>מצב המערכת</h2><button id="refresh">בדיקה מחדש</button></div>
+          <div class="status-row"><span>Frontend</span><strong class="ok">עובד</strong></div>
+          <div class="status-row"><span>Backend</span><strong id="backend-status" class="pending">בודק…</strong></div>
+          <div class="status-row"><span>Database</span><strong id="database-status" class="pending">בודק…</strong></div>
+          <div class="big-number"><strong id="visit-count">—</strong><span>ביקורים נשמרו ב־DB</span></div>
+        </article>
+
+        <article class="card">
+          <h2>משתני סביבה</h2>
+          <p class="muted">הערכים נטענו בזמן עליית קונטיינר ה־Frontend.</p>
+          <dl>
+            <div><dt>APP_NAME</dt><dd id="env-app-name">—</dd></div>
+            <div><dt>WELCOME_MESSAGE</dt><dd id="env-message">—</dd></div>
+            <div><dt>API_URL</dt><dd id="env-api-url">—</dd></div>
+            <div><dt>THEME_COLOR</dt><dd id="env-theme">—</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="card visits-card">
+        <div class="card-title"><div><h2>רשומות אחרונות מה־Database</h2><p class="muted">כל רענון דף מוסיף רשומה דרך ה־Backend.</p></div></div>
+        <div id="visits" class="visits"><span class="muted">טוען…</span></div>
+      </section>
+    </main>
+    <script src="/env.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
